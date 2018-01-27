@@ -18,7 +18,8 @@ export const ElectronicsController = functions.https.onRequest((request, respons
     const ref = db.ref("electronics");
     await ref.set({
       target: target,
-      action: action
+      action: action,
+      update_time: (new Date()).getTime()
     });
   })();
 
